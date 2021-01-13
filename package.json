@@ -20,7 +20,11 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public",
+    "screenshot": "node ./scripts/storycap.js",
+    "visual-testing": "reg-suit run"
   },
   "eslintConfig": {
     "extends": [
@@ -39,5 +43,19 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "^6.1.14",
+    "@storybook/addon-essentials": "^6.1.14",
+    "@storybook/addon-links": "^6.1.14",
+    "@storybook/node-logger": "^6.1.14",
+    "@storybook/preset-create-react-app": "^3.1.5",
+    "@storybook/react": "^6.1.14",
+    "cross-spawn": "^7.0.3",
+    "reg-keygen-git-hash-plugin": "^0.10.11",
+    "reg-notify-github-plugin": "^0.10.10",
+    "reg-publish-gcs-plugin": "^0.10.10",
+    "reg-suit": "^0.10.10",
+    "storycap": "^3.0.3"
   }
 }
