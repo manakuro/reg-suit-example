@@ -16,4 +16,10 @@ jobs:
             - node_modules
           key: v2-dependencies-{{ checksum "package.json" }}
       - run: yarn screenshot
+      - run:
+          name: Set up environment variables
+          command: |
+            echo $GCP_CREDENTIALS > ./google_application_credentials.json
+            echo 'export GOOGLE_APPLICATION_CREDENTIALS=./google_application_credentials.json' >> $BASH_ENV
+            source $BASH_ENV
       - run: yarn visual-testing
