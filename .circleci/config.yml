@@ -15,6 +15,9 @@ jobs:
           paths:
             - node_modules
           key: v2-dependencies-{{ checksum "package.json" }}
+      - run:
+          name: install jp font
+          command: sudo apt-get install fonts-ipafont fonts-ipaexfont
       - run: yarn screenshot
       - run:
           name: Set up environment variables
